@@ -48,11 +48,11 @@ globalBasePrice = 25000;
 
 const car1 = {name: 'BMW m&m', basePrice: 50000, finalPrice: 60000};
 car1.finalPrice = car1.basePrice + globalBasePrice;
-console.log(car1) 
+console.log(car1) //Resultado: se ha modificado el valor de basePrice en variable car1: 75000
 
 const car2 = {name: 'Chevrolet Corbina', basePrice: 70000, finalPrice: 80000};
 car2.finalPrice = car2.basePrice + globalBasePrice;
-console.log(car2)
+console.log(car2) //Resultado: se ha modificado el valor de basePrice en variable car2: 95000
 
 
 
