@@ -4,7 +4,7 @@
 //? ITERACION #1: VARIABLE --->
 //*EJERCICIO 1.1
 const myFavoriteHero = "Hulk";
-
+console.log(myFavoriteHero) //Devuelve "Hulk"
 
 //*EJERCICIO 1.2
 const x = 50;
@@ -32,7 +32,7 @@ console.log(character); //Resultado: {name: 'Jack Sparrow', age:25}
 let firstName = "Jon";
 let lastName= "Snow";
 let age = 24;
-let frase = `Soy ${firstName} ${lastName}, tengo ${24} años y me gustan los lobos.`
+let frase = `Soy ${firstName} ${lastName}, tengo ${age} años y me gustan los lobos.`
 console.log(frase); //Resultado: 'Soy Jon Snow, tengo 24 años y me gustan los lobos'
 
 
@@ -174,12 +174,16 @@ for(i = 0; i <= bucleFor; i++){
 
 
 //*EJERCICIO 1.2
-let bucleFor1 = 9;
-for(i = 0; i <= bucleFor1; i++){
-i % 2 == 0;
-console.log(i)
-}
 
+let bucleFor1 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
+
+   for (let e = 0; e < bucleFor1.length; e++) {
+       if (bucleFor1[e] % 2 === 0) {
+           console.log(e, 'El resto es 0');
+       } else {
+           console.log(e, 'El resto no es cero');
+       }
+   }
 
 //*EJERCICIO 1.3
 let contadorOvejas = 10
@@ -225,22 +229,3 @@ for (let e = 0; e < contadorOvejas1.length; e++) {
 8 Intentando dormir 🐑🙉
 9 Intentando dormir 🐑🙉
 10 Durmiendo 💀💤*/
-
-
-
-
-
-
-/*if (contarOvejas == 0) {console.log("Intentando dormir🐑🛏️")}
-    else if(contarOvejas == 1){console.log("Intentando dormir🐑🛏️")}
-    else if(contarOvejas == 2){console.log("Intentando dormir🐑🛏️")}
-    else if(contarOvejas == 3){console.log("Intentando dormir🐑🛏️")}
-    else if(contarOvejas == 4){console.log("Intentando dormir🐑🛏️")}
-    else if(contarOvejas == 5){console.log("Intentando dormir🐑🛏️")}
-    else if(contarOvejas == 6){console.log("Intentando dormir🐑🛏️")}
-    else if(contarOvejas == 7){console.log("Intentando dormir🐑🛏️")}
-    else if(contarOvejas == 8){console.log("Intentando dormir🐑🛏️")}
-    else if(contarOvejas == 9){console.log("Intentando dormir🐑🛏️")}
-    else if(contarOvejas == 10){console.log("Dormido 💤💀")}
-    else{console.log("Ya hemos dejado de contar")}*/
-    //setInterval()
