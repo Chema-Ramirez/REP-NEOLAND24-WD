@@ -1,10 +1,10 @@
 //! EJERCICIOS - JS BASIC ALGORITHMS ---> ✏️😉
 
-
 //? ITERACION #1: VARIABLE --->
 //*EJERCICIO 1.1
 const myFavoriteHero = "Hulk";
 console.log(myFavoriteHero) //Devuelve "Hulk"
+
 
 //*EJERCICIO 1.2
 const x = 50;
@@ -18,6 +18,7 @@ const y = 10;
 //*EJERCICIO 1.4
 const z = h + y;
 console.log(z); //Resultado: z = 15
+
 
 
 
@@ -56,6 +57,7 @@ console.log(car2) //Resultado: se ha modificado el valor de basePrice en variabl
 
 
 
+
 //? ITERACION #3: OPERADORES --->
 //*EJERCICIO 1.1
 let a = 10;
@@ -90,6 +92,7 @@ let c = 10;
 let m = 5;
 let i = c *= m;
 console.log(i); //Resultado = 50
+
 
 
 
@@ -133,6 +136,7 @@ console.log(rickAndMortyCharacters2); //Resultado: ["Rick", "Jerry", "Morty", "S
 
 
 
+
 //? ITERACION #5 CONDICIONALES --->
 //*EJERCICIO 1.1
 const number1 = 10;
@@ -162,6 +166,7 @@ if((number3*5 == number1)&&(number1*2 == number2)){
 if((number2/2 == number1)||(number1/5 == number3)){
     console.log("number2 entre 2 es igual a number1 O number1 entre 5 es igual a number3")
 };
+
 
 
 
@@ -210,7 +215,8 @@ for (let i = 0; i <= contadorOvejas; i++) {
 9 Intentando dormir 🐑🙉
 10 Durmiendo 💀💤*/
 
-//// OTRA OPCION EJERCICIO 1.3
+
+//// OTRA OPCION EJERCICIO 1.3 --->
 let contadorOvejas1 = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
 for (let e = 0; e < contadorOvejas1.length; e++) {
     if (contadorOvejas1[e] === 10) {
