@@ -1,0 +1,44 @@
+body {
+    background: #eee;
+    font-family: sans-serif;
+}
+
+.card {
+    width: 400px;
+    background: #fff;
+    margin: 16px auto;
+    border: 1px solid black;
+    padding: 8px
+}
+
+.title {
+    background: cornflowerblue;
+    border: 3px solid black;
+    font-size: 16px;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+.content {
+    background: cornflowerblue;
+    border: 3px solid black;
+    padding: 16px 8px;
+    margin-bottom: 8px;
+}
+
+
+.button-container {
+    background: cornflowerblue;
+    border: 3px solid black;
+    padding: 8px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background: white;
+    border: 1px solid black;
+    padding: 8px 24px;
+    margin: auto;
+}
