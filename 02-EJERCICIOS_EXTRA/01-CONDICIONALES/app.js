@@ -13,7 +13,7 @@ const starWarsInfo = {
                     name: "Luke Skywalker",
                     homeworld: "Tatooine",
                     species: "Human",
-                    allies: ["Han Solo", "Leia Organa", "Obi-Wan Kenobi"],
+                    allies: ["Han Solo", "Leia Organa", "Obi-wan Kenobi"],
                 },
                 villain: {
                     name: "Darth Vader",
@@ -124,10 +124,10 @@ const starWarsInfo = {
         //javascript
 
         function cambiarDirectorSiAnteriorA1980(data) {
-            const movie = data.movie;
+            const pelicula = data.movie;
 
-            if (movie.release_year < 1980) {
-                movie.director = "Irvin Kershner";
+            if (pelicula.release_year < 1980) {
+                pelicula.director = "Irvin Kershner";
             }
         }
 
@@ -194,6 +194,17 @@ const starWarsInfo = {
         -Paso 2: Verificar si `name` es "Anakin Skywalker". 
         -Paso 3: Si se cumple la condición, cambiar `species` a "Sith".*/
 
+        function cambiarEspecie (data) {
+            const darthVader = data.movie.characters.villain;
+
+            if (darthVader.name === "Anakin Skywalker") {
+                darthVader.species = "Sith" 
+            }else {console.log ("Sigue siendo humano")}
+        }
+
+        cambiarEspecie(starWarsInfo)
+        console.log(starWarsInfo.movie.characters.villain.species)
+
 
 
 
@@ -215,3 +226,54 @@ const starWarsInfo = {
 
         4. ** Bonus **: Si el año de lanzamiento(`release_year`) es anterior a 1980, cambia el título(`title`) 
         de la película a `"Star Wars: Episode IV - A New Hope"`.*/
+
+
+        function cambiarEstatusYAgregarAliado(data) {
+            const darthVaderEspecieYOrigen = data.movie.characters.villain
+            
+            if (darthVaderEspecieYOrigen.name === "Darth Vader" && darthVaderEspecieYOrigen.homeworld === "Tatooine") {
+                darthVaderEspecieYOrigen.species = "Sith Lord";
+                if(!darthVaderEspecieYOrigen.allies.includes("Boba Fett")){darthVaderEspecieYOrigen.allies.push("Boba Fett")};
+            } 
+
+
+
+            const lukeSkywalkerAliados = data.movie.characters.main
+
+            if (lukeSkywalkerAliados.allies.includes ("Obi-wan Kenobi")) {
+                if(!lukeSkywalkerAliados.allies.includes("Yoda"))
+                    {lukeSkywalkerAliados.allies.push("Yoda")};
+            }
+
+
+
+            const directorPelicula = data.movie
+
+            if (directorPelicula.director === "George Lucas") {
+                data.movie.producer = "Lucas Film"
+            };
+
+
+
+            const añoLanzamiento = data.movie
+
+            if (añoLanzamiento.release_year < 1980) {
+                añoLanzamiento.title = "Star Wars: Episode IV - A New Hope"
+            }
+        }
+        cambiarEstatusYAgregarAliado(starWarsInfo)
+
+        console.log(starWarsInfo.movie.characters.villain);
+        //Resultado primera parte: se ha cambiado la especia a "Sith Lord" y se ha añadido a "Boba Fett" a aliados de Darth Vader
+
+        console.log(starWarsInfo.movie.characters.main); 
+        //Resultado segunda parte: se ha añadido a Yoda a la lista de aliados de Luke Skywalder al incluir Obi-an en los aliados
+
+        console.log(starWarsInfo.movie.producer)
+        //Resultado tercera parte: se ha añadido la propiedad "producer: Lucas Film" cuando el director es "George Lucas"
+
+        console.log(starWarsInfo.movie.title)
+        //Resultado bonus: se ha cambiado el titulo de la pelicula al ser anterior a 1980
+
+        
+
