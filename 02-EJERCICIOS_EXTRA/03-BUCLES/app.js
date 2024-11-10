@@ -229,6 +229,8 @@ nombreYModeloNaves(starWarsDatabase)
 
 
 
+
+
 //? ** Ejercicio 5: Crear un resumen de personajes por especie **
 
 //*Enunciado
