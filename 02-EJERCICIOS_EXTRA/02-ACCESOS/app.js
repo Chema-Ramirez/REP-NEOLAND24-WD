@@ -7,32 +7,32 @@
 //javascript
 
 const starWarsInfo = {
-movie: {
-    title: "A New Hope",
-    release_year: 1977,
-    director: "George Lucas",
-    characters: {
-    main: {
-        name: "Luke Skywalker",
-        homeworld: "Tatooine",
-        species: "Human",
-        allies: ["Han Solo", "Leia Organa", "Obi-Wan Kenobi"],
+    movie: {
+        title: "A New Hope",
+        release_year: 1977,
+        director: "George Lucas",
+        characters: {
+            main: {
+                name: "Luke Skywalker",
+                homeworld: "Tatooine",
+                species: "Human",
+                allies: ["Han Solo", "Leia Organa", "Obi-Wan Kenobi"],
+            },
+            villain: {
+                name: "Darth Vader",
+                homeworld: "Tatooine",
+                species: "Human",
+                allies: ["Emperor Palpatine"],
+            },
+        },
     },
-    villain: {
-        name: "Darth Vader",
-        homeworld: "Tatooine",
-        species: "Human",
-        allies: ["Emperor Palpatine"],
-    },
-    },
-},
 };
 
 
 
 //? ** Ejercicio 1: Acceder a un valor específico **
 
-    //*Enunciado
+//*Enunciado
 
 /*Queremos acceder al nombre del director de la película.
 
@@ -49,11 +49,10 @@ movie: {
 
 //javascript
 function obtenerDirector(data) {
-return data.movie.director;
+    return data.movie.director;
 }
 
-// Probamos la función
-console.log(obtenerDirector(starWarsInfo)); // Debería imprimir "George Lucas"
+console.log(obtenerDirector(starWarsInfo)); // Resultado: imprime "George Lucas"
 
 
 
@@ -62,9 +61,16 @@ console.log(obtenerDirector(starWarsInfo)); // Debería imprimir "George Lucas"
 
 //? ** Ejercicio 2: Modificar un valor específico **
 
-    //*Enunciado
+//*Enunciado
 
 //Queremos cambiar el nombre del planeta natal de Luke Skywalker a "Dagobah".
+
+function cambiarNombrePlanetaNatal(data) {
+    return data.movie.characters.main.homeworld = "Dagobah"
+}
+
+console.log(cambiarNombrePlanetaNatal(starWarsInfo))
+
 
 
 
@@ -73,9 +79,16 @@ console.log(obtenerDirector(starWarsInfo)); // Debería imprimir "George Lucas"
 
 //? ** Ejercicio 3: Agregar un nuevo aliado a un personaje **
 
-    //*Enunciado
+//*Enunciado
 
 //Queremos agregar un nuevo aliado, "Chewbacca", al array de aliados de Luke Skywalker.
+
+function agregarNuevoAliado(data) {
+    data.movie.characters.main.allies.push("Chewbacca")
+}
+agregarNuevoAliado(starWarsInfo)
+
+console.log(starWarsInfo.movie.characters.main.allies)
 
 
 
@@ -84,9 +97,15 @@ console.log(obtenerDirector(starWarsInfo)); // Debería imprimir "George Lucas"
 
 //? ** Ejercicio 4: Cambiar el nombre del villano **
 
-    //*Enunciado
+//*Enunciado
 
 //Queremos cambiar el nombre de "Darth Vader a "Anakin Skywalker" en el JSON.
+
+function cambiarNombreVillano(data) {
+    return data.movie.characters.villain.name = "Anakin Skywalker"
+}
+
+console.log(cambiarNombreVillano(starWarsInfo))
 
 
 
@@ -95,7 +114,12 @@ console.log(obtenerDirector(starWarsInfo)); // Debería imprimir "George Lucas"
 
 //? ** Ejercicio 5: Actualizar el año de estreno **
 
-    //*Enunciado
+//*Enunciado
 
 //Queremos actualizar el año de estreno de la película de 1977 a 1978.
 
+function cambiarAñoEstreno(data) {
+    return data.movie.release_year = 1978
+}
+
+console.log(cambiarAñoEstreno(starWarsInfo))
