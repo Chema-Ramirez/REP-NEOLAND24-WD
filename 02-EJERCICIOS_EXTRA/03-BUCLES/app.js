@@ -1,3 +1,62 @@
+//! BUCLES (EJERCICIOS)
+
+//JSON 
+
+const starWarsDatabase = {
+    movies: [{
+            title: "A New Hope",
+            release_year: 1977,
+            characters: [{
+                    name: "Luke Skywalker",
+                    homeworld: "Tatooine",
+                    species: "Human"
+                },
+                {
+                    name: "Darth Vader",
+                    homeworld: "Tatooine",
+                    species: "Human"
+                },
+            ],
+            starships: [{
+                    name: "X-wing",
+                    model: "T-65 X-wing"
+                },
+                {
+                    name: "TIE Advanced x1",
+                    model: "Twin Ion Engine"
+                },
+            ],
+        },
+        {
+            title: "The Empire Strikes Back",
+            release_year: 1980,
+            characters: [{
+                    name: "Yoda",
+                    homeworld: "Dagobah",
+                    species: "Unknown"
+                },
+                {
+                    name: "Han Solo",
+                    homeworld: "Corellia",
+                    species: "Human"
+                },
+            ],
+            starships: [{
+                    name: "Millennium Falcon",
+                    model: "YT-1300"
+                },
+                {
+                    name: "Slave I",
+                    model: "Firespray-31"
+                },
+            ],
+        },
+    ],
+};
+
+
+
+
 //? ** Ejercicio 1: Listar todas las películas y sus años de estreno **
 
 //*Enunciado
@@ -28,13 +87,12 @@
 
 function listarPeliculas(data) {
     // Paso 1: Accedemos al array de películas
-    const peliculas = data.movies;
 
-    for (let i = 0; i < peliculas.length; i++) {
-        const pelicula = peliculas[i];
+    for (let i = 0; i < starWarsDatabase.movies.length; i++) {
+        const pelicula = starWarsDatabase.movies[i];
 
         // Paso 2: Extraemos el título y el año
-        console.log(`Título: $ {pelicula.title}, Año: $ {pelicula.release_year}`);
+        console.log(`Título: ${pelicula.title}, Año: ${pelicula.release_year}`);
     }
 }
 
@@ -73,14 +131,14 @@ function listarPersonajesPorPelicula(data) {
 
     for (let i = 0; i < peliculas.length; i++) {
         const pelicula = peliculas[i];
-        console.log(`Película: $ {pelicula.title}`);
+        console.log(`Película: ${pelicula.title}`);
 
         // Accedemos al array de personajes dentro de la película
         const personajes = pelicula.characters;
 
         for (let j = 0; j < personajes.length; j++) {
             const personaje = personajes[j];
-            console.log(` - Personaje: $ {personaje.name}`);
+            console.log(` - Personaje: ${personaje.name}`);
         }
     }
 }
@@ -95,7 +153,7 @@ listarPersonajesPorPelicula(starWarsDatabase);
 
 //? ** Ejercicio 3: Extraer información específica de los personajes **
 
-   //*Enunciado
+//*Enunciado
 
 //Queremos crear una función que recorra todas las películas y luego imprima el nombre, planeta natal(`homeworld`) y especie de cada personaje.
 
@@ -126,15 +184,13 @@ function listarDetallesPersonajes(data) {
 
     for (let i = 0; i < peliculas.length; i++) {
         const pelicula = peliculas[i];
-        console.log(`Película: $ {pelicula.title}`);
+        console.log(`Película: ${pelicula.title}`);
 
         const personajes = pelicula.characters;
 
         for (let j = 0; j < personajes.length; j++) {
             const personaje = personajes[j];
-            console.log(` - Nombre: $ {personaje.name}, 
-                            Planeta: $ {personaje.homeworld}, 
-                            Especie: $ {personaje.species}`);
+            console.log(` -Nombre: ${personaje.name}, -Planeta: ${personaje.homeworld}, -Especie: ${personaje.species}`);
         }
     }
 }
@@ -149,18 +205,51 @@ listarDetallesPersonajes(starWarsDatabase);
 
 //? ** Ejercicio 4: Listar nombres y modelos de todas las naves **
 
-    //*Enunciado
+//*Enunciado
 
 //Queremos una función que recorra todas las películas y liste el `name` y `model` de cada nave en esa película.
 
+function nombreYModeloNaves(data) {
+    const infoNaves = data.movies;
 
+    for (let i = 0; i < infoNaves.length; i++) {
+        const pelicula = infoNaves[i];
+
+        for (let j = 0; j < pelicula.starships.length; j++) {
+            const nave = pelicula.starships[j];
+
+    console.log(`Nombre de la nave: ${nave.name} y Modelo ${nave.model}`)
+
+        }
+    }
+}
+
+nombreYModeloNaves(starWarsDatabase)
 
 
 
 
 //? ** Ejercicio 5: Crear un resumen de personajes por especie **
 
-    //*Enunciado
+//*Enunciado
 
 //Queremos una función que recorra todas las películas y agrupe los personajes por especie en un objeto.
 
+function personajesPorEspecie(data) {
+    const films = data.movies;
+
+    for (let i = 0; i < films.length; i++) {
+        const pelicula = films[i];
+        console.log(`Película: ${pelicula.title}`)
+
+
+    const personajes = pelicula.characters
+
+        for (let j = 0; j < personajes.length; j++) {
+            const  personajeEspecie = personajes[j];
+            
+            console.log(`El Personaje ${personajeEspecie.name} es ${personajeEspecie.species};`)
+        }
+    }
+}
+personajesPorEspecie(starWarsDatabase)
