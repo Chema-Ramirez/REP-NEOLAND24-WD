@@ -16,7 +16,7 @@ const starWarsInfo = {
                     allies: ["Han Solo", "Leia Organa", "Obi-wan Kenobi"],
                 },
                 villain: {
-                    name: "Darth Vader",
+                    name: "Anakin Skywalker",
                     homeworld: "Tatooine",
                     species: "Human",
                     allies: ["Emperor Palpatine"],
@@ -203,7 +203,8 @@ const starWarsInfo = {
         }
 
         cambiarEspecie(starWarsInfo)
-        console.log(starWarsInfo.movie.characters.villain.species)
+        console.log(starWarsInfo.movie.characters.villain.species) 
+        //Resultado: Cuando Darth Vader tiene name:"Anakin Skywalker", cambia su especie a specie= "Sith"  
 
 
 
@@ -228,7 +229,8 @@ const starWarsInfo = {
         de la película a `"Star Wars: Episode IV - A New Hope"`.*/
 
 
-        function cambiarEstatusYAgregarAliado(data) {
+        function modificacionDeDatosStarWars(data) {
+
             const darthVaderEspecieYOrigen = data.movie.characters.villain
             
             if (darthVaderEspecieYOrigen.name === "Darth Vader" && darthVaderEspecieYOrigen.homeworld === "Tatooine") {
@@ -250,7 +252,7 @@ const starWarsInfo = {
             const directorPelicula = data.movie
 
             if (directorPelicula.director === "George Lucas") {
-                data.movie.producer = "Lucas Film"
+                directorPelicula.producer = "Lucas Film"
             };
 
 
@@ -261,7 +263,7 @@ const starWarsInfo = {
                 añoLanzamiento.title = "Star Wars: Episode IV - A New Hope"
             }
         }
-        cambiarEstatusYAgregarAliado(starWarsInfo)
+        modificacionDeDatosStarWars(starWarsInfo)
 
         console.log(starWarsInfo.movie.characters.villain);
         //Resultado primera parte: se ha cambiado la especia a "Sith Lord" y se ha añadido a "Boba Fett" a aliados de Darth Vader
